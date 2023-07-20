@@ -1,0 +1,98 @@
+@use "../abstracts/index" as *;
+@use "../base/index" as *;
+@use "../theme/index" as *;
+
+@mixin upload-box {
+  height: 140px;
+  width: 140px;
+  border-radius: $radius;
+  margin: 10px;
+  align-self: center;
+  justify-self: center;
+  background-color: $theme-card-background-color;
+  position: relative;
+  display: flex;
+  border: solid 1px $theme-background-color;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  @include transition_all;
+  &:hover {
+    @include transition_all;
+    border: solid 1px $primary-color;
+    background-color: $theme-background-color;
+    .upload-image-button {
+      @include transition_all;
+      visibility: visible;
+      background-image: radial-gradient($primary-color-complimentary, $primary-color);
+      opacity: 0.55;
+      z-index: 10;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      .camera-upload {
+        opacity: 0.55;
+      }
+    }
+  }
+  .upload-image-button {
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    border-radius: $radius;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+    visibility: collapse;
+    z-index: 10;
+    @include transition_all;
+  }
+
+  .profile-photo {
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    border-radius: $radius;
+    padding: 0;
+    background-size: contain;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    z-index: 5;
+  }
+
+  .profile-photo-holder {
+    height: 60%;
+    width: 60%;
+    margin: auto;
+    padding: 0;
+    background-size: contain;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+    z-index: 5;
+  }
+  .input-file {
+    visibility: hidden;
+  }
+  .photo-spinner {
+    z-index: 10;
+    position: absolute;
+    right: 31px;
+    top: 31px;
+  }
+}
+
+.upload-box {
+  @include upload-box;
+}

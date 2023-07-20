@@ -1,0 +1,242 @@
+@use "values" as *;
+
+// ============================= MIXINS=================================================================================
+@mixin blur-background($background, $backdrop-filter) {
+  background-color: $background;
+  -webkit-backdrop-filter: blur($backdrop-filter) !important;
+  backdrop-filter: blur($backdrop-filter) !important;
+
+  /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
+  @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    background-color: rgba(40, 40, 40, .8);
+  }
+  @media (max-width: 1000px) {
+
+  }
+}
+
+
+
+// ============================= Backgrounds ===========================================================================
+.dark-primary-background {
+  background-color: $primary-color-dark;
+}
+
+.complimentary-background {
+  background-image: linear-gradient(to left, $primary-color-dark, $primary-color-complimentary);
+}
+
+.gradient-background {
+  background-image: linear-gradient($theme-card-background-color, $theme-background-color, $theme-background-color, $theme-background-color);
+}
+
+.card-background {
+  background-color: $theme-card-background-color !important;
+}
+
+.main-background {
+  background-color: $theme-background-color !important;
+}
+
+.primary-color-background {
+  background-color: $primary-color !important;
+}
+
+.primary-color-dark-background {
+  background-color: $primary-color-dark !important;
+}
+
+.primary-color-light-background {
+  background-color: $primary-color-light;
+}
+
+.warning-color-background {
+  background-color: $warning-color !important;
+}
+
+.accent-color-background {
+  background-color: $accent-color !important;
+}
+
+.input-background {
+  background-color: $theme-input-background-color !important;
+}
+
+.transparent-background {
+  background-color: transparent !important;
+}
+
+.background-image1 {
+  position: relative;
+  height: 100vh;
+  //width: 100vw;
+}
+
+.background-image1:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background-image: url("../../assets/backgrounds/pattern-1.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 50%;
+  opacity: 1;
+  content: "";
+  object-fit: cover;
+}
+
+.background-image2 {
+  position: relative;
+  height: 100vh;
+  //width: 100vw;
+}
+
+.background-image2:before {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("../../assets/backgrounds/pattern-2.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 50%;
+  opacity: 1;
+  content: "";
+  object-fit: cover;
+}
+
+
+.background-image3 {
+  position: relative;
+  height: 100vh;
+}
+
+.background-image3:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("../../assets/backgrounds/pattern-3.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 50%;
+  opacity: 1;
+  content: "";
+  object-fit: cover;
+}
+
+.hover-input-background {
+  &:hover {
+    background-color: $theme-input-background-color;
+  }
+}
+
+
+.main-container-background {
+  position: relative;
+}
+
+.main-container-background:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("../../assets/backgrounds/pattern-1.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 50%;
+  opacity: 1;
+  content: "";
+  object-fit: cover;
+}
+
+
+// ============================= Text Colour ===========================================================================
+.text-color-white {
+  color: white !important;
+}
+.text-color-black {
+  color: black !important;
+}
+
+.text-color-primary {
+  color: $primary-color !important;
+}
+
+.text-color-accent {
+  color: $accent-color !important;
+}
+
+.text-color-warning {
+  color: $warning-color !important;
+}
+
+.text-color-secondary {
+  color: $theme-secondary-text !important;
+}
+
+
+// ============================= Border Colour =========================================================================
+.border-primary-color-dark-1px {
+  border: solid 1px $primary-color-dark;
+}
+
+.border-left-primary-color-dark-1px {
+  border-left: solid 1px $primary-color-dark;
+}
+
+.border-bottom-primary-color-dark-1px {
+  border-bottom: solid 1px $primary-color-dark;
+}
+
+.border-card-color-2px {
+  border: solid 2px $theme-card-background-color;
+}
+
+.no-border {
+  border: none;
+}
+
+// ============================= Shadows ===============================================================================
+.main-background-shadow-hover {
+  &:hover {
+    box-shadow: $main-background-shadow-hover!important;
+  }
+}
+
+
+.main-background-shadow {
+  box-shadow: $main-background-shadow!important;
+}
+
+.primary-shadow {
+  box-shadow: $primary-shadow;
+}
+
+.svg-shadow {
+  -webkit-filter: drop-shadow( -3px 0 12px rgba(0, 0, 0, .1));
+  filter: drop-shadow( -3px 0 12px rgba(0, 0, 0, .1));
+  /* Similar syntax to box-shadow */
+}
+
+.text-shadowed {
+  -webkit-filter: drop-shadow(0px 2px 2px rgba(130,130,130,1));
+  filter        : drop-shadow(0px 2px 2px rgba(130,130,130,1));
+  -ms-filter    : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=2, Color='#444')";
+  filter        : "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=2, Color='#444')";
+}
+

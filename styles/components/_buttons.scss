@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+@use '../theme' as *;
+
+@mixin default-button-states() {
+  background-color: transparent !important;
+  border-radius: $radius;
+  border: none;
+  @include transition_all;
+  &:disabled {
+    background-image: none;
+    color: gray !important;
+    background-color: transparent !important;
+    box-shadow: none;
+  }
+  &:focus {
+    outline: solid 1px $primary-color;
+    box-shadow: none;
+  }
+  &:active {
+    outline: solid 1px $primary-color;
+    box-shadow: none;
+  }
+}
+
+.default-button {
+  @include default-button-states;
+}
+
+.hover-text-button {
+  &:hover {
+    color: $primary-color!important;
+    @include transition_all;
+  }
+}
+
+
+.legacy-button {
+  @include default-button-states;
+  background-image: linear-gradient(to left, $primary-color, $primary-color-complimentary)!important;
+}

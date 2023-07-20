@@ -1,0 +1,22 @@
+@use "../base/index" as *;
+@use "../theme/index" as *;
+
+
+.inner-html {
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+  text-align: start;
+  img {
+    border-radius: $radius;
+    width: 80%;
+    margin: 10px;
+    box-shadow: $main-shadow-color;
+  }
+  a {
+    color: deepskyblue;
+  }
+  * {
+    text-align: start;
+  }
+}

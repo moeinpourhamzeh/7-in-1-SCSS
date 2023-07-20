@@ -1,0 +1,43 @@
+@mixin transition_all() {
+  -webkit-transition: all 0.3s ease-out; /* For Safari 3.1 to 6.0 */
+  -moz-transition: all 0.3s ease-out; /* For Mozila */
+  -o-transition: all 0.3s ease-out; /* For opera */
+  transition: all 0.3s ease-out;
+}
+
+@mixin transition_all_ease_in_out() {
+  -webkit-transition: all 0.5s ease-in-out; /* For Safari 3.1 to 6.0 */
+  -moz-transition: all 0.5s ease-in-out; /* For Mozila */
+  -o-transition: all 0.5s ease-in-out; /* For opera */
+  transition: all 0.5s ease-in-out;
+}
+
+.transition_all {
+  @include transition_all;
+}
+
+.transition_all_ease_in_out {
+  @include transition_all_ease_in_out;
+}
+
+@mixin transition_menu() {
+  -webkit-transition: all .4s ease-in-out; /* For Safari 3.1 to 6.0 */
+  -moz-transition: all .4s ease-in-out; /* For Mozila */
+  -o-transition: all .4s ease-in-out; /* For opera */
+  transition: all .4s ease-in-out;
+}
+
+@mixin transition_left_side_container() {
+  -webkit-transition: all .4s ease-in-out; /* For Safari 3.1 to 6.0 */
+  -moz-transition: all .4s ease-in-out; /* For Mozila */
+  -o-transition: all .4s ease-in-out; /* For opera */
+  transition: all .4s ease-in-out;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}

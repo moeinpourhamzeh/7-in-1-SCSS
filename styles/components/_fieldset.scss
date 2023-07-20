@@ -1,0 +1,22 @@
+@use "../base/index" as *;
+@use "../theme/index" as *;
+
+@mixin fieldset-container {
+  color: $theme-main-text;
+  border-radius: $radius;
+}
+
+@mixin fieldset-legend{
+  color: $theme-main-text;
+  padding: 5px 10px
+}
+
+
+// Classes
+.fieldset-container{
+  @include fieldset-container;
+}
+
+.fieldset-legend{
+  @include fieldset-legend;
+}

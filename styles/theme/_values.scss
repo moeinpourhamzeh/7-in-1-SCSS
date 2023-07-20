@@ -1,0 +1,80 @@
+// CSS style to handle the toggle
+// default colors
+.theme-wrapper {
+  --primary-color: #ffcd05;
+  --primary-color-dark: #dbb000;
+  --primary-color-light: #fce89a;
+  --primary-color-complimentary: #f39f1e;
+
+  --accent-color: #f39f1e;
+
+  --warning-color: #C50F30;
+
+  // Backgrounds
+  --dark-background-color: #1A1A1A;
+  --dark-card-background-color: #313131;
+  --dark-input-background-color: #1F1F1F;
+  --light-background-color: #F5F5F5;
+  --light-card-background-color: #FFFFFF;
+  --light-input-background-color: #F0F2F5;
+
+  --theme-background-color: var(--light-background-color);
+  --theme-card-background-color: var(--light-card-background-color);
+  --theme-input-background-color: var(--light-input-background-color);
+
+  --border-background-color: #979797;
+
+  // Texts
+  --light-theme-main-text: #1A1A1A;
+  --light-theme-secondary-text: #787878;
+  --dark-theme-main-text: #FFFFFF;
+  --dark-theme-secondary-text: #F4F5F9;
+
+  --theme-main-text: var(--light-theme-main-text);
+  --theme-secondary-text: var(--light-theme-secondary-text);
+}
+
+
+// Assign CSS Variables to SCSS variables
+$primary-color: var(--primary-color);
+$primary-color-dark: var(--primary-color-dark);
+$primary-color-light: var(--primary-color-light);
+$primary-color-complimentary: var(--primary-color-complimentary);
+
+$accent-color: var(--accent-color);
+
+$warning-color: var(--warning-color);
+
+// Backgrounds
+$dark-background-color: var(--dark-background-color);
+$dark-card-background-color: var(--dark-card-background-color);
+$dark-input-background-color: var(--dark-input-background-color);
+$light-background-color: var(--light-background-color);
+$light-card-background-color: var(--light-card-background-color);
+$light-input-background-color: var(--light-input-background-color);
+
+// Theme Brightness
+$theme-background-color: var(--theme-background-color);
+$theme-card-background-color: var(--theme-card-background-color);
+$theme-input-background-color: var(--theme-input-background-color);
+
+
+//Shadow
+$main-shadow-color: var(--main-shadow-color);
+$main-background-shadow: 0 0px 10px rgba(47, 47, 47, 0.07), 0 2px 30px rgba(47, 47, 47, 0.14);
+$main-background-shadow-hover: 0 0px 15px rgba(31, 31, 31, 0.14), 0 2px 25px rgba(31, 31, 31, 0.34);
+$primary-shadow: 0 0 1px $primary-color-dark, 0 0 6px $primary-color-light;
+$complimentary-shadow: 0 0 12px $primary-color-complimentary, 0 0 2px $primary-color-light;
+
+
+// Texts
+$light-theme-main-text: var(--light-theme-main-text);
+$light-theme-secondary-text: var(--light-theme-secondary-text);
+$dark-theme-main-text: var(--dark-theme-main-text);
+$dark-theme-secondary-text: var(--dark-theme-secondary-text);
+
+
+$theme-main-text: var(--theme-main-text);
+$theme-secondary-text: var(--theme-secondary-text);
+
+

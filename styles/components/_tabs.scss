@@ -1,0 +1,31 @@
+@use "../abstracts/index" as *;
+@use "../base/index" as *;
+@use "../theme/index" as *;
+
+@mixin page_tab() {
+  background-color: $theme-card-background-color;
+  z-index: 200;
+  .mat-tab-label {
+    font-weight: 500;
+    border-radius: 0;
+    color: $theme-main-text;
+    @include transition_all;
+  }
+  /* Styles for the active tab label */
+  .mat-tab-label.mat-tab-label-active {
+    background-color: $primary-color-dark;
+    box-shadow: $main-background-shadow;
+    font-weight: 500;
+    color: white;
+    @include transition_all;
+  }
+  /* Styles for the ink bar */
+  .mat-ink-bar {
+    background-color: transparent !important;
+  }
+}
+
+.page-tab {
+  @include page_tab;
+}
+

@@ -1,0 +1,137 @@
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@include keyframes(fade-in) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@include keyframes (slide-up) {
+  0%{
+    transform: translateY(30px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@include keyframes (slide-left) {
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+@include keyframes (slide-down) {
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@include keyframes (fade-up) {
+  0%{
+    opacity: .01;
+    transform: translateY(60px);
+  }
+  25%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@include keyframes (fade-down) {
+  0%{
+    opacity: .01;
+    transform: translateY(-30px);
+  }
+  25%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@include keyframes (fade-right) {
+  0%{
+    opacity: .01;
+    transform: translatex(-30px);
+  }
+  25%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@include keyframes (fade-left) {
+  0%{
+    opacity: .01;
+    transform: translatex(30px);
+  }
+  25%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.appear-in {
+  @include animation(fade-in .8s forwards);
+}
+
+.appear-down {
+  @include animation(fade-down .8s forwards);
+}
+
+.appear-up {
+  @include animation(fade-up .8s forwards);
+}
+
+.appear-right {
+  @include animation(fade-right .8s forwards);
+}
+
+.slide-up {
+  @include animation(slide-up .6s forwards);
+}
+
+.slide-down {
+  @include animation(slide-down .6s forwards);
+}
+
+.slide-left {
+  @include animation(slide-left .6s forwards);
+}

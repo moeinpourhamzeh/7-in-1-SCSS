@@ -1,0 +1,91 @@
+@use "../abstracts/index" as *;
+
+
+@mixin input-half {
+  min-width: 100px;
+  width: 40%;
+  margin: 10px;
+}
+
+@mixin input($width) {
+  width: $width;
+  margin: 10px;
+}
+
+
+@mixin left-dir {
+  text-align: left;
+  direction: ltr;
+}
+
+@mixin left-dir-center {
+  text-align: center;
+  direction: ltr;
+}
+
+
+.left-dir {
+  @include left-dir;
+}
+
+
+.left-dir-center {
+  @include left-dir-center;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+}
+
+.input-message {
+  min-width: 200px;
+  position: relative;
+  padding: 10px 5px;
+  text-indent: 10px;
+  outline: none;
+  @include animation(fade-in .5s forwards);
+  transform: scaleX(1);
+  transition: opacity .25s, transform .25s;
+  opacity: 1;
+  @include transition_all;
+  &:focus {
+    outline: none;
+    @include transition_all;
+  }
+}
+
+.input-message-hidden {
+  transform: scaleX(0);
+  opacity: 0;
+  transition: opacity .25s, transform .25s;
+  transform-origin: 0 0;
+}
+
+
+.filter-input {
+  height: 50px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  @include transition_all;
+  &:focus {
+    @include transition_all;
+  }
+}
+
+.normal-input {
+  min-width: 40px;
+  background-color: transparent;
+  text-align: center;
+  @include transition_all;
+  &:focus {
+    outline-width: 1px;
+    outline-style: solid;
+    @include transition_all;
+  }
+}
